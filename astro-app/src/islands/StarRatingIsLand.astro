@@ -1,0 +1,12 @@
+---
+// src/islands/StarRatingIsland.astro
+import StarRatingIsland from './StarRating.jsx';
+const { fieldId = 'product-rating', initial = 0, max = 5 } = Astro.props;
+---
+
+<StarRatingIsland
+  fieldId={fieldId}
+  initial={initial}
+  max={max}
+  client:load
+/>
