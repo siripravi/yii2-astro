@@ -1,0 +1,8 @@
+# Ignore node_modules directory
+astro-app/node_modules/
+# Ignore yii assets directory
+web/assets/
+# Ignore runtime directory
+runtime/
+# Ignore vendor directory
+vendor/

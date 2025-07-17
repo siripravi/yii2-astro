@@ -1,0 +1,24 @@
+{
+  "minimum-stability": "stable",
+  "require": {
+    "yiisoft/yii2": "~2.0.0",
+    "yiisoft/yii2-bootstrap": "~2.0.0",
+    "macklus/yii2-crawler": "@dev",
+    "linslin/yii2-curl": "*",
+    "yiisoft/yii2-gii": "~2.2.0",   
+    "diecoding/yii2-toastr": "*",
+    "slavkovrn/yii2-lightbox": "dev-master",
+    "yiisoft/yii2-queue": "^2.3"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  }
+}
