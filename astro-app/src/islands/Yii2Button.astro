@@ -1,0 +1,6 @@
+---
+import YButton from './Yii2Button.jsx';
+const { label, url, style } = Astro.props;
+---
+
+<YButton client:load {label} {url} {style} />

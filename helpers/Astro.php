@@ -8,7 +8,7 @@ class Astro
     protected static function findHashedAsset($baseName)
     {
         $webroot = Yii::getAlias('@webroot');
-        $files = glob("$webroot/_astro/{$baseName}.*.js");
+        $files = glob("$webroot/astro-dist/js/{$baseName}.*.js");
         
         if (empty($files)) {
             Yii::error("Astro asset not found: {$baseName}.*.js");
@@ -20,7 +20,7 @@ class Astro
         });
         
         $filemtime = filemtime($files[0]);
-        return "/_astro/" . basename($files[0]) . "?v=$filemtime";
+        return "/astro-dist/js/" . basename($files[0]) . "?v=$filemtime";
     }
 
     public static function partial($componentName, $props = array())

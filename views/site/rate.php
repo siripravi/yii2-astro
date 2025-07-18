@@ -3,6 +3,7 @@
 use app\helpers\Astro;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 ?>
 <?php $form = ActiveForm::begin(['id' => 'form-rate']); ?>
@@ -20,6 +21,15 @@ echo Astro::partial('StarRating', [
     'max' => 5
 ]);
 ?>
+<h4>Astro Button</h4>
+<?= \app\components\AstroWrapper::widget([
+    'component' => 'Yii2Button',
+    'props' => [
+        'label' => 'Submit', 
+        'url' => Url::to(['controller/action']),
+        'style' => 'danger'
+    ]
+]) ?>
 <div class="form-group">
     <?= Html::submitButton('Signup', ['class' => 'btn btn-primary btn-block', 'name' => 'signup-button']) ?>
 </div>

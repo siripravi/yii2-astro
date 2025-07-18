@@ -92,52 +92,7 @@ AppAsset::register($this);
             <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const islands = document.querySelectorAll('astro-island[component-url*="StarRating"]');
-
-            islands.forEach(island => {
-                // 1. Remove the fallback content to prevent duplicates
-                const fallback = island.querySelector('[slot="fallback"]');
-                if (fallback) fallback.remove();
-
-                // 2. Create a single container for React
-                const container = document.createElement('div');
-                island.appendChild(container);
-
-                // 3. Load and render the component
-                const hydrate = async () => {
-                    try {
-                        const {
-                            default: StarRating
-                        } = await import(island.getAttribute('component-url'));
-                        const props = JSON.parse(island.getAttribute('props'));
-
-                        ReactDOM.createRoot(container).render(
-                            React.createElement(StarRating, {
-                                ...props,
-                                // Force re-render with proper context
-                                key: Math.random().toString(36).substring(2)
-                            })
-                        );
-
-                        console.log('StarRating successfully rendered');
-                    } catch (error) {
-                        console.error('Rendering failed:', error);
-                    }
-                };
-
-                // 4. Disable Astro's automatic hydration
-                island.setAttribute('client', 'none');
-
-                // 5. Run our manual hydration
-                setTimeout(hydrate, 0);
-            });
-        });
-    </script>
+    
     <?php $this->endBody() ?>
 </body>
 

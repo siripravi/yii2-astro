@@ -1,9 +1,14 @@
 ---
-// src/pages/test.astro
-import Test from '../islands/Test.jsx';
+// src/pages/index.astro
 ---
 <html>
+  <head>
+    <title>Test Page</title>
+    <style>
+      .test { color: red; }
+    </style>
+  </head>
   <body>
-    <Test client:load/>
+    <h1 class="test">Hello World</h1>
   </body>
 </html>
